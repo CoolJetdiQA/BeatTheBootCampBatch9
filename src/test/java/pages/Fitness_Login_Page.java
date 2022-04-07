@@ -8,8 +8,4 @@ public class Fitness_Login_Page {
 	public Fitness_Login_Page() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
-	
-
-	
-
 }
