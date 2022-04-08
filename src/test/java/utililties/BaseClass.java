@@ -39,6 +39,13 @@ public class BaseClass {
 		
 		return driver;
 	}
+	public void tearDown() {
+        if (driver != null) {
+            driver.close();
+            // driver.quit();
+            driver = null;
+        }
+    } 
 
 	static {
 		try (FileInputStream input = new FileInputStream(filePath)) {
