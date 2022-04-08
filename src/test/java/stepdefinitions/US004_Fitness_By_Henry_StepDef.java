@@ -32,9 +32,9 @@ public class US004_Fitness_By_Henry_StepDef extends CommonMethods {
 
 		// Assert slider
 		int actualImageSliderCount = sliders.size();
-//		Assert.assertEquals(
-//				"FAILED! Expect " + expectedNumOfSlider + " sliders but actual sliders are " 
-//		        + actualImageSliderCount, expectedNumOfSlider.intValue(), actualImageSliderCount);
+		Assert.assertEquals(
+				"FAILED! Expect " + expectedNumOfSlider + " sliders but actual sliders are " 
+		        + actualImageSliderCount, expectedNumOfSlider.intValue(), actualImageSliderCount);
 	}
 
 	@Then("Click on each image on the slider and it navigates to the product page")
