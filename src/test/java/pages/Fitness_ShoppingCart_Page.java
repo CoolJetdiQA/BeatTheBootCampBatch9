@@ -1,13 +1,11 @@
 package pages;
 
 import java.util.List;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import utililties.BaseClass;
 import utililties.CommonMethods;
 
@@ -49,7 +47,7 @@ public class Fitness_ShoppingCart_Page {
 	@FindBy(xpath="//tr[contains(@ng-repeat,'rate in estimates')]")
 	private List<WebElement> shippingCarrierRates;
 	
-	
+
 	
 	//TC03_USER006 RISA
 	public WebElement getClearButton() {
@@ -137,5 +135,4 @@ public class Fitness_ShoppingCart_Page {
 	public void acceptOnAlert() {
 		BaseClass.getDriver().switchTo().alert().accept();
 	}
-
 }

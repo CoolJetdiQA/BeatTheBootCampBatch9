@@ -53,11 +53,11 @@ public class BaseClass {
 		return configFile.getProperty(keyName);
 	}
 	
+	// Close quit browser
 	public static void tearDown() {
-		if (driver != null) {
+		if(driver != null) {
 			driver.close();
-			// driver.quit();
-			driver= null;
+			driver = null;
 		}
 	}
 }
