@@ -1,6 +1,9 @@
 package stepdefinitions;
 
 import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -35,7 +38,7 @@ public class US006_Fitness_By_Risa_StepDef extends CommonMethods{
 		getFtShoppingCartPage().setCityInput("Falls Church");
 		getFtShoppingCartPage().selectCountry("United States");
 		getFtShoppingCartPage().selectRegion("Virginia");
-		CommonMethods.schrollDown();		
+		schrollDown();		
 		getFtShoppingCartPage().getEstimatesButton().click();
 	}
 	//TC01_USER006 RISA	
@@ -43,14 +46,14 @@ public class US006_Fitness_By_Risa_StepDef extends CommonMethods{
 	public void verify_user_should_be_able_to_see_shipping_options_are_shown() {
 		getFtShoppingCartPage().checkShownEstimates();
 		takeScreenshot("TC01_USER006.//cherrysucks/estimates.png");
-		BaseClass.tearDown();
+		
 	}
 	//TC02_USER006 RISA
 	@Then("Verify User should be able to continue shopping")
 	public void verify_user_should_be_able_to_continue_shopping() {
 		waitForClickability(getFtShoppingCartPage().getContinueShoppingButton());
 		getFtShoppingCartPage().getContinueShoppingButton().click();
-		CommonMethods.takeScreenshot(getTimeStemp());
+		takeScreenshot(getTimeStemp());
 	}
 	
 	//TC03_USER006 RISA
@@ -64,9 +67,13 @@ public class US006_Fitness_By_Risa_StepDef extends CommonMethods{
 	@Then("Verify There are no items in your cart text is shown")
 	public void verify_there_are_no_items_in_your_cart_text_is_shown() {
 		getFtShoppingCartPage().checkNoItemTextAvailable();
-		CommonMethods.takeScreenshot(getTimeStemp());
-		BaseClass.tearDown();
-		
+		takeScreenshot(getTimeStemp());
+			
+	}
+	
+	@After 
+	public void tearDownMethod() {
+		tearDown();
 	}
 
 
