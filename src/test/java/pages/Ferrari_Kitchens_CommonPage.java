@@ -13,6 +13,7 @@ public class Ferrari_Kitchens_CommonPage {
 	public Ferrari_Kitchens_CommonPage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
+<<<<<<< HEAD
     //US004_Ferrari_Parwin
 	@FindBy(xpath = "//*[@id=\"menu-item-343\"]/a")
 	private WebElement FinancingButton;
@@ -57,4 +58,6 @@ public class Ferrari_Kitchens_CommonPage {
 
 	}
 
+=======
+>>>>>>> main
 }
