@@ -1,8 +1,6 @@
 package pages;
 
 import java.util.List;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +11,7 @@ public class Ferrari_Kitchens_CommonPage {
 	public Ferrari_Kitchens_CommonPage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
-<<<<<<< HEAD
+
     //US004_Ferrari_Parwin
 	@FindBy(xpath = "//*[@id=\"menu-item-343\"]/a")
 	private WebElement FinancingButton;
@@ -30,34 +28,32 @@ public class Ferrari_Kitchens_CommonPage {
 	@FindBy(xpath = "//div[@class='entry-content']//div[1]//div[1]//div[1]//div[1]//figure[1]//div[1]//img[1]")
 	private List<WebElement> allImages;
 
+	//US004_Ferrari_Parwin
 	public WebElement getFinancebtn() {
 
 		return FinancingButton;
 	}
 
+	//US004_Ferrari_Parwin
 	public WebElement getContinueButton() {
 
 		return ContinueButton;
-
 	}
 
+	//US004_Ferrari_Parwin
 	public WebElement getLightStreamButton() {
 
 		return LightStreamButton;
-
 	}
 
+	//US004_Ferrari_Parwin
 	public WebElement getFinancingButton() {
 
 		return FinancingButton;
-
 	}
 
+	//US004_Ferrari_Parwin
 	public List<WebElement> getallImages() {
 		return allImages;
-
 	}
-
-=======
->>>>>>> main
 }

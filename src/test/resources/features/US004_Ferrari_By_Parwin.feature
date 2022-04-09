@@ -3,6 +3,7 @@
 #Userstory: US004_Ferrari
 #As A user, I am able to get to the financing page
 
+@Parwin
 Feature: Verify Financing button Functionality 
 
 Background: 

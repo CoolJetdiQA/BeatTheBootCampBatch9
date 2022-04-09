@@ -1,21 +1,13 @@
-
-
 package stepdefinitions;
 
 import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.interactions.Actions;
-
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import utililties.BaseClass;
 import utililties.CommonMethods;
-import utililties.PageInitializer;
 
 public class US004_Ferrari_By_Parwin_StepDef extends CommonMethods {
 
@@ -25,19 +17,16 @@ public class US004_Ferrari_By_Parwin_StepDef extends CommonMethods {
 		// open website
 		getDriver().get(getProperty("FerrariKitchenUrl"));
 		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 	}
 
 	@When("A user click on Financing button")
 	public void a_user_click_on_financing_button() {
 		getFkCommonPage().getFinancebtn().click();
-
 	}
 
 	@When("A user click on CONTINUE TO LIGHTSTREAM button")
 	public void a_user_click_on_continue_to_lightstream_button()  {
 		getFkCommonPage().getContinueButton().click();
-		
 	}
 
 	@Then("A user should be able to navigate to the Financing page")
@@ -45,19 +34,16 @@ public class US004_Ferrari_By_Parwin_StepDef extends CommonMethods {
 		String expectUrl = "https://www.lightstream.com/kitchen-remodel-financing";
 		String actualResult = BaseClass.getDriver().getCurrentUrl();
 		Assert.assertEquals(expectUrl, actualResult);
-
 	}
 
 	@When("A user click on LIGHTSTREAM image")
 	public void a_user_click_on_lightstream_image() {
 		getFkCommonPage().getLightStreamButton().click();
-
 	}
 
 	@When("A user click on the Financing tab")
 	public void a_user_click_on_the_financing_tab() {
 		getFkCommonPage().getFinancingButton().click();
-
 	}
 
 	// get all images
@@ -70,7 +56,6 @@ public class US004_Ferrari_By_Parwin_StepDef extends CommonMethods {
 		int expectResult = 3;
 		int ActualResult = getFkCommonPage().getallImages().size();
 		Assert.assertEquals(expectResult, ActualResult);
-
 	}
 
 	@After
