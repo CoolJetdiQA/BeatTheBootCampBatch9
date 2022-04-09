@@ -52,6 +52,20 @@ public class Fitness_HomePage {
 		return sliders;
 	}
 	
+	
+	// TC01_US004_Fitness - Henry
+	public void checkImageSlider(Integer expectedNumOfSlider) {
+		
+		// Get all image sliders
+		List<WebElement> sliders = getSliders();
+
+		// Assert slider
+		int actualImageSliderCount = sliders.size();
+		Assert.assertEquals(
+				"FAILED! Expect " + expectedNumOfSlider + " sliders but actual sliders are " + actualImageSliderCount,
+				expectedNumOfSlider.intValue(), actualImageSliderCount);
+	}	
+	
 	// // TC02_US004_Fitness - Henry
 	public void checkAllSliderNavigateToNextPage() {
 		
