@@ -13,7 +13,6 @@ public class Fitness_ShoppingCart_Page {
 
 	public Fitness_ShoppingCart_Page() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
-
 	}
 
 	// US005_Fitness_Aim
