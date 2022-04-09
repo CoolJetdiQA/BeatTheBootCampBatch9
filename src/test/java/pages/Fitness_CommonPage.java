@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,5 +37,27 @@ public class Fitness_CommonPage {
 	// TC03_US004_Fitness - Henry
 	public WebElement getCartPreviewTotalCurrency() {
 		return cartPreviewTotalCurrency;
+	}
+	
+	//TC03_US004_Fitness - Henry
+	public void clickToChangeCurrency(String currency) {
+		
+		if(currency.equalsIgnoreCase("USA"))	
+			getUSDCurrencyIcon().click();
+	
+		if(currency.equalsIgnoreCase("Canada")) 
+			getCADCurrencyIcon().click();
+	}
+	
+	//TC03_US004_Fitness - Henry
+	public void checkCurrencyOnItemLink(String expectedCurrency) {
+		
+		WebElement currencyOnItemLink = getCartPreviewTotalCurrency();
+
+		String actualCurrency = currencyOnItemLink.getText().replaceAll("[^a-zA-Z]", "");
+
+		// Assert country
+		Assert.assertEquals(expectedCurrency + " not found in Item Link.", 
+				            expectedCurrency , actualCurrency);		
 	}
 }
