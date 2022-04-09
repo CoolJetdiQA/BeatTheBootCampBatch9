@@ -4,7 +4,6 @@ package runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-
 //@RunWith(Cucumber.class)
 @CucumberOptions(		
 		plugin = {	"pretty", "json:target/JSON_Reports/Cucumber.json",
@@ -18,5 +17,4 @@ import io.cucumber.testng.CucumberOptions;
 public class BeatTheBootCampRunnerTest extends AbstractTestNGCucumberTests{
 
 	public BeatTheBootCampRunnerTest() {} 
-
 }
