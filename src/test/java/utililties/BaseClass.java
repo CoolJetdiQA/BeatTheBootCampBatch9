@@ -52,4 +52,12 @@ public class BaseClass {
 	public static String getProperty(String keyName) {
 		return configFile.getProperty(keyName);
 	}
+	public void tearDown() {
+        if (driver != null) {
+            driver.close();
+            // driver.quit();
+            driver = null;
+        }
+    } 
+
 }
