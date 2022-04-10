@@ -5,9 +5,10 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.BaseClass;
 import org.openqa.selenium.support.ui.Select;
-import utililties.BaseClass;
 import utililties.CommonMethods;
+
 
 public class Fitness_ShoppingCart_Page {
 
@@ -15,7 +16,7 @@ public class Fitness_ShoppingCart_Page {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
-  // US003 Fitness - Phearum
+    // US003 Fitness - Phearum
 	@FindBy(xpath="//*[@id=\"search-button\"]")
 	public WebElement SearchButton; 
 	
@@ -31,15 +32,15 @@ public class Fitness_ShoppingCart_Page {
 	@FindBy(xpath="//*[@id=\"searchApp\"]/div[8]")
 	public WebElement AllItemsFound; 
 
-  // US003 Fitness - Phearum
+    // US003 Fitness - Phearum
 	@FindBy(xpath="//*[@id=\"searchApp\"]/fieldset/dl/dd/select")
 	public WebElement SearchBoxElement; 
 	
-  // US003 Fitness - Phearum
+    // US003 Fitness - Phearum
 	@FindBy(xpath="//option[@value='object:490']")
 	public WebElement CardioSearch; 
 	
-  // US003 Fitness - Phearum
+    // US003 Fitness - Phearum
 	@FindBy(xpath="//div[@class='alert alert-info search-total-hits']")
 	public WebElement AllCardioItems; 
 
@@ -55,7 +56,7 @@ public class Fitness_ShoppingCart_Page {
 	@FindBy(xpath = "//div[@class='widget product_list grid']//button[not(@style='display: none;')]")
 	public List<WebElement> listOfItemsEbikes;
 
-  // US005_Fitness_Aim
+    // US005_Fitness_Aim
 	@FindBy(xpath = "//h2[text()='New Arrivals']//parent::div//following-sibling::div/div")
 	public List<WebElement> listOfNewArrivals;
 

@@ -6,8 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utililties.BaseClass;
+import utilities.BaseClass;
 import utililties.CommonMethods;
+
 
 public class Fitness_HomePage {
 
@@ -15,11 +16,11 @@ public class Fitness_HomePage {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
   
-  // US002 Fitness - Paul
+    // US002 Fitness - Paul
 	@FindBy(xpath="//a[contains(text(),'Login')][.//following-sibling::span]")
 	private WebElement logInTab;
 	
-  // US002 Fitness - Paul
+    // US002 Fitness - Paul
 	public WebElement getLogInTab() {
 		return logInTab;
 	}
