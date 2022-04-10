@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utilities.BaseClass;
 
 public class Fitness_Login_Page {
@@ -21,7 +20,7 @@ public class Fitness_Login_Page {
 	private WebElement passwordInput;
 
 	// US002 Fitness - Paul
-	@FindBy(xpath = "//input(@id='login-button')")
+	@FindBy(xpath="//input[@id='login-button']")
 	private WebElement logInButton;
 
 	// US002 Fitness - Paul
