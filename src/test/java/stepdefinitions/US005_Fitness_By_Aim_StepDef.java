@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.BaseClass;
-import utililties.CommonMethods;
+import utilities.BaseClass;
+import utilities.CommonMethods;
 
 public class US005_Fitness_By_Aim_StepDef extends CommonMethods {
 

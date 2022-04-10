@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseClass;
 import org.openqa.selenium.support.ui.Select;
-import utililties.CommonMethods;
+import utilities.CommonMethods;
 
 
 public class Fitness_ShoppingCart_Page {

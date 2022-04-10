@@ -2,12 +2,10 @@ package stepdefinitions;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.BaseClass;
 import utilities.CommonMethods;
 
 public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
@@ -62,8 +60,8 @@ public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 //  Then User should be able to submit the inquiry form
 
 
-	@Given("Navigate to URL")
-	public void navigate_to_url() {
+	@Given("Navigate to the URL")
+	public void navigate_to_the_url() {
 		getDriver().get(getProperty("FerrariKitchenUrl"));
 	}
 

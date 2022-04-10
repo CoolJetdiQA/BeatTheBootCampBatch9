@@ -6,8 +6,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.BaseClass;
-import utililties.CommonMethods;
+import utilities.BaseClass;
+import utilities.CommonMethods;
 
 public class US004_Ferrari_By_Parwin_StepDef extends CommonMethods {
 

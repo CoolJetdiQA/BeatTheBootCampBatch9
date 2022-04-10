@@ -1,13 +1,11 @@
 package stepdefinitions;
 
 import org.junit.Assert;
-
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.BaseClass;
-import utililties.CommonMethods;
+import utilities.CommonMethods;
 
 public class US002_Fitness_By_Paul_StepDef extends CommonMethods{
     @Given("Navigate to URL")

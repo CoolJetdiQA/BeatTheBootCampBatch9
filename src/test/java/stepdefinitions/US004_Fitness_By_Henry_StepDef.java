@@ -10,7 +10,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.CommonMethods;
+import utilities.CommonMethods;
 
 public class US004_Fitness_By_Henry_StepDef extends CommonMethods {
 

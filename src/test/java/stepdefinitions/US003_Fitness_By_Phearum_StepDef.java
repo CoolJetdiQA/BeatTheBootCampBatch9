@@ -1,14 +1,13 @@
 package stepdefinitions;
 
 import java.util.concurrent.TimeUnit;
-
-import io.cucumber.core.options.Constants;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.BaseClass;
-import utililties.CommonMethods;
-import utililties.PageInitializer;
+import utilities.BaseClass;
+import utilities.CommonMethods;
+import utilities.PageInitializer;
+
 
 public class US003_Fitness_By_Phearum_StepDef extends CommonMethods{
 
