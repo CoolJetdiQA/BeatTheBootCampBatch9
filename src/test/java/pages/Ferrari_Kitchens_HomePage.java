@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utilities.BaseClass;
 
 public class Ferrari_Kitchens_HomePage {
@@ -40,10 +39,12 @@ public class Ferrari_Kitchens_HomePage {
 	@FindBy(xpath = "// div[contains(text(),'an error')]")
 	private WebElement unsuccesful;
 
+	// Chatchaya TC01_US002_Ferrari
 	public WebElement getSuccesful() {
 		return succesful;
 	}
 
+	// Chatchaya TC01_US002_Ferrari
 	public WebElement getUnsuccesful() {
 		return unsuccesful;
 	}
