@@ -1,6 +1,12 @@
 package utililties;
 
 import java.io.File;
+
+import java.io.IOException;
+import java.util.Set;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchFrameException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -10,12 +16,23 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class CommonMethods extends PageInitializer{
+
+    // US002 Fitness - Paul
+		public static JavascriptExecutor getJSObject() {
+			JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
+			return js;
+		}
+
+    // US002 Fitness - Paul
+		public static void jsClick(WebElement element) {
+			getJSObject().executeScript("arguments[0].click();", element);
+		}
 
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static void schrollDown() {
@@ -94,10 +111,5 @@ public class CommonMethods extends PageInitializer{
             e.printStackTrace();
     }
   }
-  
-   // US003 Fitness - Phearum
-	public static WebDriverWait getWaitObject() {
-        WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), 10);
-        return wait;        
-  }
 }
+

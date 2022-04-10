@@ -14,7 +14,16 @@ public class Fitness_HomePage {
 	public Fitness_HomePage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
+  
+  // US002 Fitness - Paul
+	@FindBy(xpath="//a[contains(text(),'Login')][.//following-sibling::span]")
+	private WebElement logInTab;
 	
+  // US002 Fitness - Paul
+	public WebElement getLogInTab() {
+		return logInTab;
+	}
+
 	//TC01_USER006 RISA
 	@FindBy(xpath="//span[@class='cart_preview_total']")
 	private WebElement cartTotalButton;
@@ -91,3 +100,4 @@ public class Fitness_HomePage {
 		}
 	}
 }
+

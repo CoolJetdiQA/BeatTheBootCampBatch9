@@ -29,6 +29,7 @@ public class BaseClass {
 				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
 				break;
+			
 			}			
 			
 			driver.manage().window().maximize();
