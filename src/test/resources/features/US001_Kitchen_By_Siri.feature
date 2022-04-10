@@ -2,7 +2,7 @@
 #TC01_US001_Ferrari
 Feature: feature to test homepage functionality
 
-Background: 
+  Background: 
     Given User is on homepage
 
   Scenario: Check whether homepage has 4 sliders
@@ -14,4 +14,4 @@ Background:
 
   Scenario: Click "<" and ">" arrow button to go to the next image.
     Given Click < left arrow button
-        And Click > right arrow button
+    And Click > right arrow button

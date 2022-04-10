@@ -104,4 +104,9 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 	}
+	
+	// Siri - US001 Ferrari Kitchen
+	public Boolean waitForInvisibility(WebElement element) {
+		return getWaitObject().until(ExpectedConditions.invisibilityOf(element));		
+	}
 }
