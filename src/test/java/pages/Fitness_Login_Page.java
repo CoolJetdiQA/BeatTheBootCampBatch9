@@ -18,7 +18,7 @@ public class Fitness_Login_Page {
 	@FindBy(xpath="//input[@name='password']")
 	private WebElement passwordInput;
 	
-	@FindBy(xpath="//input(@id='login-button')")
+	@FindBy(xpath="//input[@id='login-button']")
 	private WebElement logInButton;
 
 	@FindBy(xpath="//span[@class='welcome-message']")
