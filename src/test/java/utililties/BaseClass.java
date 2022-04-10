@@ -29,6 +29,7 @@ public class BaseClass {
 				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
 				break;
+			
 			}			
 			
 			driver.manage().window().maximize();
@@ -52,4 +53,13 @@ public class BaseClass {
 	public static String getProperty(String keyName) {
 		return configFile.getProperty(keyName);
 	}
+	
+	public static  void tearDown() {
+        if (driver != null) {
+            driver.close();
+            // driver.quit();
+            driver = null;
+        }
+    } 
+
 }
