@@ -4,7 +4,7 @@ package runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-//@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class) --> JUnit for cucumber
 @CucumberOptions(		
 		plugin = {	"pretty", "json:target/JSON_Reports/Cucumber.json",
 				"junit:target/Cucumber_Reports/Cucumber.xml",
