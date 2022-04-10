@@ -1,6 +1,5 @@
 package utililties;
 
-
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,6 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 
 
 public class CommonMethods extends PageInitializer{
@@ -52,25 +53,51 @@ public class CommonMethods extends PageInitializer{
   
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static byte[] takeScreenshot(String filename) {
-        TakesScreenshot ts = (TakesScreenshot)getDriver();
-        byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);
+    TakesScreenshot ts = (TakesScreenshot)getDriver();
+    byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);
 
-        File file = ts.getScreenshotAs(OutputType.FILE);
-        String destinationFile = "" + filename + getTimeStemp() + ".png";
+    File file = ts.getScreenshotAs(OutputType.FILE);
+    String destinationFile = "" + filename + getTimeStemp() + ".png";
 
-        try {
-            FileUtils.copyFile(file, new File(destinationFile));
-        } catch (Exception ex) {
-            System.out.println("Cannot take screenshot!");
-        }
-
-        return picBytes;
+    try {
+         FileUtils.copyFile(file, new File(destinationFile));
+    } catch (Exception ex) {
+         System.out.println("Cannot take screenshot!");
     }
+
+    return picBytes;
+  }
   
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static String getTimeStemp() {
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-        return sdf.format(date.getTime());
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+    
+    return sdf.format(date.getTime());
+  }
+  
+  // US003 Fitness - Phearum
+	public static void selectDdText(WebElement element, String textToSelect) {
+
+    try {
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
+
+        for (WebElement el : options) {
+             if (el.getText().equals(textToSelect)) {
+                 select.selectByVisibleText(textToSelect);
+                 break;
+            }
+        }
+
+    } catch (UnexpectedTagNameException e) {
+            e.printStackTrace();
     }
+  }
+  
+   // US003 Fitness - Phearum
+	public static WebDriverWait getWaitObject() {
+        WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), 10);
+        return wait;        
+  }
 }

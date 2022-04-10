@@ -12,6 +12,14 @@ public class Fitness_CommonPage {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
+  // US003 Fitness - Phearum
+  @FindBy(xpath="//*[@id=\"header\"]/div[2]/form/input[1]")
+	public WebElement BicycleSearch; 
+  
+  // US003 Fitness - Phearum
+  @FindBy(xpath="//*[@id=\"header\"]/div[2]/form/input[2]")
+  public WebElement searchBox;
+
 	// TC03_US004_Fitness - Henry
 	@FindBy(xpath = "//div[@class='currency_list']//img[contains(@alt, 'Currency USD')]")
 	private WebElement USDCurrencyIcon;
