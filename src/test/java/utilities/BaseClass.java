@@ -1,4 +1,4 @@
-package utililties;
+package utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -54,12 +54,11 @@ public class BaseClass {
 		return configFile.getProperty(keyName);
 	}
 	
-	public static  void tearDown() {
-        if (driver != null) {
-            driver.close();
-            // driver.quit();
-            driver = null;
-        }
-    } 
-
+	public static void tearDown() {
+		if (driver != null) {
+			driver.close();
+			// driver.quit();
+			driver= null;
+		}
+	}
 }
