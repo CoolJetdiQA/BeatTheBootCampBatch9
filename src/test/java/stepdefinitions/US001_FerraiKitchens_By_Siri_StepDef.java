@@ -3,15 +3,14 @@ package stepdefinitions;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.BaseClass;
-import utililties.CommonMethods;
-import utililties.PageInitializer;
+import utilities.BaseClass;
+import utilities.CommonMethods;
+import utilities.PageInitializer;
 
 public class US001_FerraiKitchens_By_Siri_StepDef extends CommonMethods {
 
@@ -140,5 +139,4 @@ public class US001_FerraiKitchens_By_Siri_StepDef extends CommonMethods {
 			previousImageID = currentImageID;
 		} while (counter-- > 1);
 	}
-
 }
