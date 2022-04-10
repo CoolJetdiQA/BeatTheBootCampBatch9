@@ -1,7 +1,8 @@
 package pages;
 
 import org.openqa.selenium.support.PageFactory;
-import utililties.BaseClass;
+
+import utilities.BaseClass;
 
 public class Fitness_Login_Page {
 	

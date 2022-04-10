@@ -1,4 +1,4 @@
-package utililties;
+package utilities;
 
 import pages.Ferrari_Kitchens_CommonPage;
 import pages.Ferrari_Kitchens_HomePage;
