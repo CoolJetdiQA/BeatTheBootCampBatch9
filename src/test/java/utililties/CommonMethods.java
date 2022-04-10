@@ -1,17 +1,22 @@
 package utililties;
 
-
 import java.io.File;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 
 
 public class CommonMethods extends PageInitializer{
@@ -22,18 +27,15 @@ public class CommonMethods extends PageInitializer{
 		js.executeScript("window.scrollBy(0,300)", "");
 		
 	}
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static WebDriverWait getWaitObject() {
 		WebDriverWait wait = new WebDriverWait(getDriver(), 30);
 		return wait;
 	}
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static List<WebElement> waitForAllElementsToBeVisible(List<WebElement> element) {
 		return getWaitObject().until(ExpectedConditions.visibilityOfAllElements(element));
 	}
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static WebElement waitForVisibility(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.visibilityOf(element));
@@ -43,13 +45,11 @@ public class CommonMethods extends PageInitializer{
 	public static WebElement waitForClickability(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 	}
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static void click(WebElement element) {
 		waitForClickability(element);
 		element.click();
 	}
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static byte[] takeScreenshot(String filename) {
         TakesScreenshot ts = (TakesScreenshot)getDriver();
@@ -66,11 +66,11 @@ public class CommonMethods extends PageInitializer{
 
         return picBytes;
     }
-  
 	//TC01_USER006 TC02_USER006 TC03_USER006 RISA
 	public static String getTimeStemp() {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
         return sdf.format(date.getTime());
     }
+	
 }

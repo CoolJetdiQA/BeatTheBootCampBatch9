@@ -1,11 +1,14 @@
 package pages;
 
 import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import groovy.transform.Undefined.EXCEPTION;
 import utililties.BaseClass;
 import utililties.CommonMethods;
 
@@ -47,7 +50,7 @@ public class Fitness_ShoppingCart_Page {
 	@FindBy(xpath="//tr[contains(@ng-repeat,'rate in estimates')]")
 	private List<WebElement> shippingCarrierRates;
 	
-
+	
 	
 	//TC03_USER006 RISA
 	public WebElement getClearButton() {
@@ -94,45 +97,74 @@ public class Fitness_ShoppingCart_Page {
 	
 	//TC01_USER006 RISA
 	public void checkShownEstimates() {
+		try {
 		CommonMethods.getWaitObject();
 		CommonMethods.waitForAllElementsToBeVisible(getShippingCarrierRates());
 		Assert.assertTrue(getShippingCarrierRates().size()>0);
+	}catch(EXCEPTION e) {
+		e.printStackTrace();
+	}
 	}
 	//TC01_USER006 RISA
 	public void setPostalCodeInput(String postalCode) {
+		try {
 		CommonMethods.getWaitObject();
 		CommonMethods.waitForVisibility(getPostalCodeInput());
 		getPostalCodeInput().clear();
 		getPostalCodeInput().sendKeys(postalCode);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	//TC01_USER006 RISA
 	public void setCityInput(String city) {
+		try {
 		CommonMethods.getWaitObject();
 		CommonMethods.waitForVisibility(getCityInput());
 		getCityInput().clear();
 		getCityInput().sendKeys(city);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	//TC01_USER006 RISA
 	public void selectCountry(String countryName) {
+		try {
 		CommonMethods.click(selectContries);
 		Select country = new Select(getSelectContries());
 		country.selectByVisibleText(countryName);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	//TC01_USER006 RISA
 	public void selectRegion(String regionName) {
+		try {
 		CommonMethods.click(selectRegion);
 		Select region = new Select(getSelectRegion());
 		region.selectByVisibleText(regionName);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	//TC03_USER006 RISA
 	public void checkNoItemTextAvailable() {
+		try {
 		CommonMethods.waitForVisibility(getNoItemText());
 		String actualText = getNoItemText().getText();
 		String expectedText = "no items";
 		Assert.assertTrue(actualText.contains(expectedText));
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	//TC03_USER006 RISA
 	public void acceptOnAlert() {
+		try {
 		BaseClass.getDriver().switchTo().alert().accept();
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
+
 }
