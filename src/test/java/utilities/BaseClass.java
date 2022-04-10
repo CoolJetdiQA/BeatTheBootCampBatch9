@@ -1,4 +1,4 @@
-package utililties;
+package utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -29,6 +29,7 @@ public class BaseClass {
 				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
 				break;
+			
 			}			
 			
 			driver.manage().window().maximize();

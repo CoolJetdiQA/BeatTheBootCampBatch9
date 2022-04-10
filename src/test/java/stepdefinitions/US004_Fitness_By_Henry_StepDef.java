@@ -6,17 +6,14 @@ Step definition class
 
 package stepdefinitions;
 
-import java.util.List;
-import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utililties.CommonMethods;
+import utilities.CommonMethods;
 
 public class US004_Fitness_By_Henry_StepDef extends CommonMethods {
-	
+
 	@Given("Open a {string} website")
 	public void open_a_website(String website) {
 
@@ -27,14 +24,7 @@ public class US004_Fitness_By_Henry_StepDef extends CommonMethods {
 	@Then("Test for {int} image sliders only")
 	public void test_for_and_see_image_sliders_only(Integer expectedNumOfSlider) {
 
-		// Get all image sliders
-		List<WebElement> sliders = getFtHomePage().getSliders();
-
-		// Assert slider
-		int actualImageSliderCount = sliders.size();
-		Assert.assertEquals(
-				"FAILED! Expect " + expectedNumOfSlider + " sliders but actual sliders are " 
-		        + actualImageSliderCount, expectedNumOfSlider.intValue(), actualImageSliderCount);
+		getFtHomePage().checkImageSlider(expectedNumOfSlider);
 	}
 
 	@Then("Click on each image on the slider and it navigates to the product page")
@@ -45,24 +35,14 @@ public class US004_Fitness_By_Henry_StepDef extends CommonMethods {
 
 	@When("Click on the {string} flag symbol on Change Currency")
 	public void click_on_the_flag_symbol_on_change_currency(String currency) {
-		
-		if(currency.equalsIgnoreCase("USA"))	
-			getFtCommonPage().getUSDCurrencyIcon().click();
-	
-		if(currency.equalsIgnoreCase("Canada")) 
-			getFtCommonPage().getCADCurrencyIcon().click();
+
+		getFtCommonPage().clickToChangeCurrency(currency);
 	}
 
 	@Then("User sees {string} word in Item link")
-	public void user_sees_word_in_item_link(String expectedCurrency) throws InterruptedException {
-		
-		WebElement currencyOnItemLink =getFtCommonPage().getCartPreviewTotalCurrency();
+	public void user_sees_word_in_item_link(String expectedCurrency) {
 
-		String actualCurrency = currencyOnItemLink.getText().replaceAll("[^a-zA-Z]", "");
-
-		// Assert country
-		Assert.assertEquals(expectedCurrency + " not found in Item Link.", 
-				            expectedCurrency , actualCurrency);			           
+		getFtCommonPage().checkCurrencyOnItemLink(expectedCurrency);
 	}
 
 	@After
