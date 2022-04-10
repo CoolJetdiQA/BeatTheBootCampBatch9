@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseClass;
 import org.openqa.selenium.support.ui.Select;
+import groovy.transform.Undefined.EXCEPTION;
 import utilities.CommonMethods;
 
 
@@ -163,51 +164,79 @@ public class Fitness_ShoppingCart_Page {
 	
 	//TC01_USER006 RISA
 	public void checkShownEstimates() {
-		CommonMethods.getWaitObject();
-		CommonMethods.waitForAllElementsToBeVisible(getShippingCarrierRates());
-		Assert.assertTrue(getShippingCarrierRates().size()>0);
+		try {
+			CommonMethods.getWaitObject();
+			CommonMethods.waitForAllElementsToBeVisible(getShippingCarrierRates());
+			Assert.assertTrue(getShippingCarrierRates().size()>0);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC01_USER006 RISA
 	public void setPostalCodeInput(String postalCode) {
-		CommonMethods.getWaitObject();
-		CommonMethods.waitForVisibility(getPostalCodeInput());
-		getPostalCodeInput().clear();
-		getPostalCodeInput().sendKeys(postalCode);
+		try {
+			CommonMethods.getWaitObject();
+			CommonMethods.waitForVisibility(getPostalCodeInput());
+			getPostalCodeInput().clear();
+			getPostalCodeInput().sendKeys(postalCode);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC01_USER006 RISA
 	public void setCityInput(String city) {
-		CommonMethods.getWaitObject();
-		CommonMethods.waitForVisibility(getCityInput());
-		getCityInput().clear();
-		getCityInput().sendKeys(city);
+		try {
+			CommonMethods.getWaitObject();
+			CommonMethods.waitForVisibility(getCityInput());
+			getCityInput().clear();
+			getCityInput().sendKeys(city);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC01_USER006 RISA
 	public void selectCountry(String countryName) {
-		CommonMethods.click(selectContries);
-		Select country = new Select(getSelectContries());
-		country.selectByVisibleText(countryName);
+		try {
+			CommonMethods.click(selectContries);
+			Select country = new Select(getSelectContries());
+			country.selectByVisibleText(countryName);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC01_USER006 RISA
 	public void selectRegion(String regionName) {
-		CommonMethods.click(selectRegion);
-		Select region = new Select(getSelectRegion());
-		region.selectByVisibleText(regionName);
+		try {
+			CommonMethods.click(selectRegion);
+			Select region = new Select(getSelectRegion());
+			region.selectByVisibleText(regionName);
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC03_USER006 RISA
 	public void checkNoItemTextAvailable() {
-		CommonMethods.waitForVisibility(getNoItemText());
-		String actualText = getNoItemText().getText();
-		String expectedText = "no items";
-		Assert.assertTrue(actualText.contains(expectedText));
+		try {
+			CommonMethods.waitForVisibility(getNoItemText());
+			String actualText = getNoItemText().getText();
+			String expectedText = "no items";
+			Assert.assertTrue(actualText.contains(expectedText));
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//TC03_USER006 RISA
 	public void acceptOnAlert() {
+		try {
 		BaseClass.getDriver().switchTo().alert().accept();
+		}catch(EXCEPTION e) {
+			e.printStackTrace();
+		}
 	}
 }

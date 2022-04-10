@@ -12,7 +12,8 @@ import io.cucumber.testng.CucumberOptions;
 		dryRun = false,
 		features = {"src/test/resources/features"},
 		glue = {"stepdefinitions"},
-		monochrome = true
+		monochrome = true,
+		tags = "@Risa"
 		)
 public class BeatTheBootCampRunnerTest extends AbstractTestNGCucumberTests{
 
