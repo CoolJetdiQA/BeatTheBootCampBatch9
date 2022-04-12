@@ -60,8 +60,10 @@ public class Fitness_CommonPage {
 	// TC03_US004_Fitness - Henry
 	public void checkCurrencyOnItemLink(String expectedCurrency) {
 
+		// Currency element
 		WebElement currencyOnItemLink = getCartPreviewTotalCurrency();
 
+		// Get actual currency.
 		String actualCurrency = currencyOnItemLink.getText().replaceAll("[^a-zA-Z]", "");
 
 		// Assert country
