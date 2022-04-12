@@ -9,8 +9,4 @@ public class Fitness_SignUp_Page {
 	public Fitness_SignUp_Page() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
-	
-
-	
-
 }

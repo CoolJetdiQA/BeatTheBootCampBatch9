@@ -2,18 +2,67 @@ package stepdefinitions;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.BaseClass;
 import utilities.CommonMethods;
 
 public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 
+
 	@Given("Navigate to URL")
 	public void navigate_to_url() {
+
+
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:18
+//  Given Navigate to URL
+//  When User enter "<Johnny Red Racecar>"
+//  And enter "<Johnnyredracecar@gmail.com>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+//
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:19
+//  Given Navigate to URL
+//  When User enter "<Johnny Red Racecar>"
+//  And enter "<Johnnyredracecar@fmail.com>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+//
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:20
+//  Given Navigate to URL
+//  When User enter "<Johnny Red Racecar>"
+//  And enter "<>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+//
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:21
+//  Given Navigate to URL
+//  When User enter "<>"
+//  And enter "<>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+//
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:22
+//  Given Navigate to URL
+//  When User enter "<>"
+//  And enter "<Johnnyredracecar@gmail.com>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+//
+//Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:23
+//  Given Navigate to URL
+//  When User enter "<>"
+//  And enter "<Johnnyredracecar@fmail.com>"
+//  And enter "<5714588844>"
+//  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
+//  Then User should be able to submit the inquiry form
+
 		getDriver().get(getProperty("FerrariKitchenUrl"));
 
 	}

@@ -10,7 +10,7 @@
 Feature: Inquiry form
 
 Background: 
-	Given Navigate to URL
+	Given Navigate to the URL
 #TC01_US002_Ferrari 
   Scenario Outline: User submits the inquiry form successfully.
   	When User enter name "<name>"
