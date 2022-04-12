@@ -76,11 +76,12 @@ public class Ferrari_Kitchens_HomePage {
 	private WebElement sendButton;
 
 	// Chatchaya TC01_US002_Ferrari
-	@FindBy(xpath = "// div[contains(text(),'Thank you')]")
+	@FindBy(xpath = "//div[contains(text(),'Thank you')]")
 	private WebElement succesful;
 
 	// Chatchaya TC01_US002_Ferrari
-	@FindBy(xpath = "// div[contains(text(),'an error')]")
+	@FindBy(xpath = "//div[contains(text(),'an error')]")
+	
 	private WebElement unsuccesful;
 
 	// Chatchaya TC01_US002_Ferrari

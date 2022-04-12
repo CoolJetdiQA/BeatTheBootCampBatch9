@@ -11,6 +11,10 @@ import utilities.CommonMethods;
 public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 
 
+	@Given("Navigate to URL")
+	public void navigate_to_url() {
+
+
 //Scenario Outline: User is able to submit customer inquiries.                      # src/test/resources/feature/US002_Ferrari_By_Chatchaya.feature:18
 //  Given Navigate to URL
 //  When User enter "<Johnny Red Racecar>"
@@ -59,12 +63,10 @@ public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 //  And fill out the "<Do you have kitchen to match the paint of my red race car?>"
 //  Then User should be able to submit the inquiry form
 
-
-	@Given("Navigate to the URL")
-	public void navigate_to_the_url() {
 		getDriver().get(getProperty("FerrariKitchenUrl"));
-	}
 
+	}
+	
 	@When("User enter name {string}")
 	public void user_enter_name(String string) {
 		CommonMethods.waitForClickability(getFkHomePage().getNameInput());
@@ -92,23 +94,38 @@ public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 
 	@Then("User should be able to submit the inquiry form")
 	public void user_should_be_able_to_submit_the_inquiry_form() {
+		//wait for able click "SEND" button
 		CommonMethods.waitForClickability(getFkHomePage().getSendButton());
 	    getFkHomePage().getSendButton().click();
-	    String expectedText = "Thank you";
+	    //Put wait for wait to find "Thank you for your message. It has been sent."
+	    CommonMethods.wait(5);
+	    //Assert for check success
 	    String autualText = getFkHomePage().getSuccesful().getText();
-	    Assert.assertTrue(expectedText.contains(autualText));
-//	    BaseClass.tearDown();
+	    String expectedText = "Thank you for your message. It has been sent.";   
+	    Assert.assertEquals(autualText, expectedText);
+	    //Screenshot for check Success
+	    CommonMethods.TakesScreenshot("User should be able to submit the inquiry form.//screenshot/successLogIn.png");
 	}
 	
 	@Then("User should not be able to submit the inquiry form")
 	public void user_should_not_be_able_to_submit_the_inquiry_form() {
 		CommonMethods.waitForClickability(getFkHomePage().getSendButton());
 	    getFkHomePage().getSendButton().click();
+	    //Put wait for wait to find "One or more fields have an error. Please check and try again."
+	    CommonMethods.wait(2);
+	    //Assert for check Unsuccess
 	    String autualText = getFkHomePage().getUnsuccesful().getText();
-	    String expectedText = "an error";
-	    Assert.assertTrue(expectedText.contains(autualText));
-//	    BaseClass.tearDown();
+	    String expectedText = "One or more fields have an error. Please check and try again.";
+	    Assert.assertEquals(autualText, expectedText);
+	    //Screenshot for check Fail
+	    CommonMethods.TakesScreenshot("User should not be able to submit the inquiry form.//screenshotfail/unsuccessLogIn.png");
 	}
 	
 	@After public void tearDownMethod() {     tearDown(); }
 }
+	
+	
+	
+	
+	
+	
