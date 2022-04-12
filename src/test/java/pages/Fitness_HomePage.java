@@ -77,24 +77,27 @@ public class Fitness_HomePage {
 	// // TC02_US004_Fitness - Henry
 	public void checkAllSliderNavigateToNextPage() {
 
-		// Get all image sliders
+		// Get all image in the sliders.
 		List<WebElement> sliders = this.sliders;
 
 		String homepage = "";
 		String nextpage = "";
 
-		JavascriptExecutor executor = (JavascriptExecutor) BaseClass.getDriver();
-
 		for (int i = 0; i < sliders.size(); i++) {
+			
+			// Get current URL.
 			homepage = BaseClass.getDriver().getCurrentUrl().toLowerCase();
 
-			executor.executeScript("arguments[0].click()", sliders.get(i));
+			// Click on each image in the slider.
+			CommonMethods.jsClick(sliders.get(i));
 
+			// Get next page URL.
 			nextpage = BaseClass.getDriver().getTitle().toLowerCase();
 
-			// Assert image click goes to the next page.
+			// Assert clicking on the image click goes to the next page.
 			Assert.assertNotEquals("FAILED! Page navigate error!", nextpage, homepage);
 
+			// Go back to the previous page (home page).
 			BaseClass.getDriver().navigate().back();
 		}
 	}
