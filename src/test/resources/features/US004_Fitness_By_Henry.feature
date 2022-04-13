@@ -8,14 +8,14 @@ Feature: Home Page Feature
 
   Background: 
     Given Open a "FitnessAvenueUrl" website
-	
+
   #TC01_US004_Fitness
-  @SmokeTest
+  @RegressionTest
   Scenario: Verify that Homepage has 5 sliders
     Then Test for 5 image sliders only
-	
 
   #TC02_US004_Fitness
+  @RegressionTest
   Scenario: Verify all sliders that can navigate to the next Product page
     Then Click on each image on the slider and it navigates to the product page
 
