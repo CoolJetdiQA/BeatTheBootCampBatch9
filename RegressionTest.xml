@@ -5,7 +5,7 @@
 
 
 
-  <test thread-count="5" name="US004_Fitness - Henry">
+  <test name="Regression Test">
   
   	<classes>
   		<class name="runners.BeatTheBootCampRunnerTest"></class>

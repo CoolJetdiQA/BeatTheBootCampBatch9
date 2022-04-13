@@ -79,7 +79,7 @@
 				<version>3.0.0-M6</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>cucumbertestng.xml</suiteXmlFile>
+						<suiteXmlFile>RegressionTest.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>paremeterTesting2.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 
