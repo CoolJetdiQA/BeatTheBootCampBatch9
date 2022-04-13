@@ -11,7 +11,7 @@ import utilities.CommonMethods;
 public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 
 
-	@Given("Navigate to URL")
+	@Given("Navigate to the URL")
 	public void navigate_to_url() {
 
 
@@ -104,7 +104,7 @@ public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 	    String expectedText = "Thank you for your message. It has been sent.";   
 	    Assert.assertEquals(autualText, expectedText);
 	    //Screenshot for check Success
-	    CommonMethods.TakesScreenshot("User should be able to submit the inquiry form.//screenshot/successLogIn.png");
+	    CommonMethods.takeScreenshot("User should be able to submit the inquiry form.//screenshot/successLogIn.png");
 	}
 	
 	@Then("User should not be able to submit the inquiry form")
@@ -118,7 +118,7 @@ public class US002_Ferrari_By_Chatchaya_StepDef extends CommonMethods {
 	    String expectedText = "One or more fields have an error. Please check and try again.";
 	    Assert.assertEquals(autualText, expectedText);
 	    //Screenshot for check Fail
-	    CommonMethods.TakesScreenshot("User should not be able to submit the inquiry form.//screenshotfail/unsuccessLogIn.png");
+	    CommonMethods.takeScreenshot("User should not be able to submit the inquiry form.//screenshotfail/unsuccessLogIn.png");
 	}
 	
 	@After public void tearDownMethod() {     tearDown(); }
