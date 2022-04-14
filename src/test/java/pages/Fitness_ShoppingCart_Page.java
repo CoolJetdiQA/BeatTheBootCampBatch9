@@ -2,6 +2,7 @@ package pages;
 
 import java.util.List;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -70,8 +71,36 @@ public class Fitness_ShoppingCart_Page {
 	public WebElement clickOnEbikes;
 
 	// US005_Fitness_Aim
-	@FindBy(xpath = "//*[@id='sidebar_cart_preview']/div[2]/div[3]/button")
+	@FindBy(xpath = "//button[@class='btn btn-default']")
 	public WebElement checkoutButton;
+	
+	// US005_Fitness_Aim
+	@FindBy(xpath = "//button[@name='shopping_cart[checkout]']")
+	public WebElement checkoutButton1;
+	
+	// US005_Fitness_Aim
+	@FindBy(xpath = "//div[@id='section_review']")
+	public WebElement reviewOrder;
+	
+	// US005_Fitness_Aim
+	public WebElement getReviewOrder() {
+		return reviewOrder;
+	}
+	
+	// US005_Fitness_Aim
+	public void setReviewOrder(WebElement reviewOrder) {
+		this.reviewOrder = reviewOrder;
+	}
+	
+	// US005_Fitness_Aim
+	public void eBikeList() {
+		List<WebElement> listOfItemsEbikes = BaseClass.getDriver().findElements(
+				By.xpath("//div[@class='widget product_list grid']//button[not(@style='display: none;')]"));
+		for (int i = 0; i < 2; i++) {
+			CommonMethods.waitForClickability(listOfItemsEbikes.get(i));
+			listOfItemsEbikes.get(i).click();
+		}
+	}
 	
 	//TC03_USER006 RISA
 	@FindBy(xpath="//button[contains(text(),'Clear')]")
