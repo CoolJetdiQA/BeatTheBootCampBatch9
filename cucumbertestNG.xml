@@ -5,7 +5,7 @@
 
 
 
-  <test name="Regression Test">
+  <test name="BeatTheBootCampBatch9 Test">
   
   	<classes>
   		<class name="runners.BeatTheBootCampRunnerTest"></class>
