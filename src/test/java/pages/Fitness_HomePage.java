@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseClass;
 import utilities.CommonMethods;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class Fitness_HomePage {
 

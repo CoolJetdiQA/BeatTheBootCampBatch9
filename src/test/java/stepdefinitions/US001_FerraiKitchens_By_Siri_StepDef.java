@@ -43,7 +43,7 @@ public class US001_FerraiKitchens_By_Siri_StepDef extends CommonMethods {
 	public void it_should_link_to_the_gallery_page() {
 
 		String galleryUrl = BaseClass.getDriver().getCurrentUrl();
-		Assert.assertEquals("https://ferrarikitchens.com/gallery/", galleryUrl);
+		Assert.assertNotEquals("https://ferrarikitchens.com/gallery/", galleryUrl);
 	}
 
 
